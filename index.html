@@ -34,7 +34,7 @@ html, body {
   height: 100%;
 }
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -Noto Sans, apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 150%;
   line-height: 1.4;
 }
@@ -42,7 +42,7 @@ body {
   margin: 0;
 }
 .viewport-header {
-  position: relative;
+  position: flex;
   height: 100%;
   text-align: center;
   display: flex;
@@ -71,7 +71,7 @@ main {
   position: relative;
   padding: 6rem;
   p {
-    max-width: 600px;
+    max-width: 100%;
     margin: 1rem auto;
   }
 }
@@ -101,7 +101,6 @@ main {
       box-shadow: 0 .5rem 1rem rgba(235, 232, 239, 1) !important;
     }
 
-    }
 
       
     </style>
@@ -121,7 +120,7 @@ main {
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
+              <div class="navbar-nav ms-auto">
                 
                 <a class="nav-link active" aria-current="page" href="#">Service</a>
                 <a class="nav-link" href="#">Contact</a>
@@ -130,24 +129,48 @@ main {
             </div>
           </div>
         </nav>
+        <header class="viewport-header">
+          <div class="container">
+            <div class="row justify-content-start">
+              
+                <img src="Images/yach-maintenance.svg" class="figure-img img-fluid rounded" alt="yach-maintenance">
+
+              </div>
+            </div>
+              <div class="row justify-content-end">
+                <div class="col">
+                  <img src="Images/skilled-experience.svg" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          <h1>
+            Explore
+            <span>Montana</span>
+          </h1>
+        </div>
+        </header>        
 <main>
   <div class="container px-4">
-
     <div class="row justify-content-start">
-
-        <div class="col-4 ">
+        <div class="col-8 ">
             <img src="Images/yach-maintenance.svg" class="img-fluid">
         </div>
-        <div class="row justify-content-end">
-            <div class="col-4">
-                <img src="Images/skilled-experience.svg" class="img-fluid">
-            </div>
+    </div>   
+      <div class="row justify-content-end">
+        <div class="col-6">
+            <img src="Images/skilled-experience.svg" class="img-fluid">
         </div>
+      </div>
+  </div>
+ 
 
+ <div class="container-fluid my-4 pb-4" style="background-color:rgba(23, 103, 130, 0.52)">
+  <div class="row text-center">
+    <div class="col d-grid">
+      <p>We offer all for yachts repairing and maintenance:</p>
     </div>
-</div>
-</div>
-  [[[https://codepen.io/chriscoyier/pen/VbqzER]]]
+ </div>
+
 </main>
 
         <!-- 
