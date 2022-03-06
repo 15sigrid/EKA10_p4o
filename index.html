@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,15 +12,56 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <style>
-    video {
-      object-fit: cover;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
+    body {
+      background-attachment: fixed;
+      background-image: url(images/ajutine.png);
+      background-size: cover;
+      background-repeat: no-repeat;
     }
+
+    #background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+h1 {
+  position: relative;
+  color: white;
+}
+.headline {
+  width: 100%;
+  font: 8vw system-ui, sans-serif;
+  font-weight: 900;
+  height: 150px;
+}
+@supports (backdrop-filter: blur(12px)) {
+  .visually-hidden {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  h1 {
+    backdrop-filter: blur(12px);
+    background: rgba(white, 0.2);
+    clip-path: url(#lockup-headline-mask-path);
+  }
+}
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
     .navbar-nav {
       font-size: 20px;
@@ -45,16 +87,14 @@
       box-shadow: 0 .5rem 1rem rgba(235, 232, 239, 1) !important;
     }
 
+
+    element.style {
+      background-color: rgba(23, 103, 130, 0.52);
+    }
+
     .container,
     .container-fluid {
       backface-visibility: hidden;
-    }
-
-    body {
-      background-attachment: fixed;
-      background-image: url(images/ajutine.png);
-      background-size: cover;
-      background-repeat: no-repeat;
     }
 
     .col {
@@ -100,7 +140,9 @@
     .card-img,
     .card-img-bottom {
       width: 100%;
-      height: 18rem;
+      height: 22rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
       border-bottom-right-radius: calc(1.25rem - 1px);
       border-bottom-left-radius: calc(1.25rem - 1px);
     }
@@ -116,15 +158,26 @@
       background-color: rgba(35, 129, 161, 1);
       transition: 1s ease;
     }
-
+    *, ::after, ::before {
+    box-sizing: border-box;
+    border-radius: 1.25rem;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+    
+}
     .card:hover .card-desc {
       opacity: 1;
       height: 100%;
     }
 
+    element.style {
+    color: rgba(235, 232, 239, 1);
+}
     h1 {
       font-size: 1rem;
-      color: rgba(235, 232, 239, 1);
+
       margin: 40px 0 20px 0;
       text-align: center;
     }
@@ -134,11 +187,13 @@
 </head>
 
 <body>
-
-
+  <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+    <source src="https://www.youtube.com/watch?v=etNAW5bQ4x8" type="video/mp4">
+  </video>  
+  <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:rgba(23, 103, 130, 0.52)">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="images/Pure4ocean_white.svg"></a>
+      <a class="navbar-brand" href="#"><img src="images/Pure4ocean_white.svg" class="img-fluid"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -154,7 +209,20 @@
     </div>
   </nav>
 
-  <div class="container px-4">
+    <!-- Header -->
+    <header>
+      <h1 class="headline">
+        <span class="visually-hidden">Maintain your boat & save the ocean's health!</span>
+        <svg aria-hidden="true" id="lockup-headline-mask" class="headline lockup-headline-mask visually-hidden">
+          <clipPath id="lockup-headline-mask-path">
+            <text dominant-baseline="hanging" text-anchor="middle" x="50%" y="0em" dy="0.125em">Awesome Headline</text>
+          </clipPath>
+        </svg>
+      </h1>
+    </header>
+ 
+  <!-- Intro -->
+  <div class="container-fluid px-4">
     <div class="row justify-content-start">
       <div class="col-8 ">
         <img src="images/yach-maintenance.svg" class="img-fluid">
@@ -167,7 +235,7 @@
     </div>
   </div>
 
-
+  <!-- Service -->
   <div class="container-fluid mt-5" style="background-color:rgba(23, 103, 130, 0.52)">
 
     <div class="row">
@@ -176,79 +244,83 @@
       </div>
     </div>
 
-  <div class="container my-4 pb-2">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-          <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts polishing service
-          </h5>
-          <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
-          <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="container-fluid my-2 pb-2">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts polishing service
+            </h5>
+            <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
+            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts cleaning service
+            </h5>
+            <img src="images/yacht_cleaning.jpg" class="card-img-bottom" alt="">
+            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts bottom jobs</h5>
+            <img src="images/yacht_bottom_job.jpg" class="card-img-bottom">
+            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-          <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts cleaning service
-          </h5>
-          <img src="images/yacht_cleaning.jpg" class="card-img-bottom" alt="">
-          <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="row service row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <div class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts interior washing
+              and scrubbing service</div>
+            <img src="images/yacht_interior_cleaning.jpg" class="card-img-bottom">
+            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-          <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts bottom jobs</h5>
-          <img src="images/yacht_bottom_job.jpg" class="card-img-bottom">
-          <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="col">
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Teak varnishing service
+            </h5>
+            <img src="images/yacht_teak_varnishing.jpg" class="card-img-bottom">
+            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row service row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-          <div class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts interior washing
-            and scrubbing service</div>
-          <img src="images/yacht_interior_cleaning.jpg" class="card-img-bottom">
-          <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-          <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Teak varnishing service
-          </h5>
-          <img src="images/yacht_teak_varnishing.jpg" class="card-img-bottom">
-          <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-          <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Fibre Glass and Gel Coat
-            repairs</h5>
-          <img src="images/yacht_fiber_gelcoat_rep.jpg" class="card-img-bottom">
-          <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="col">
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Fibre Glass and Gel Coat
+              repairs</h5>
+            <img src="images/yacht_fiber_gelcoat_rep.jpg" class="card-img-bottom">
+            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-    <div class="container px-4 py-4">
-      <div class="row justify-content-center">
-        <div class="col-4">
-          <img src="images/save_the_oceans_health.svg" class="img-fluid">
-        </div>
+
+  <!-- Quote -->
+  <div class="container-fluid px-4 py-4">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <img src="images/save_the_oceans_health.svg" class="img-fluid">
       </div>
+    </div>
   </div>
+
+  <!-- News -->
   <div class="container-fluid mt-5" style="background-color:rgba(23, 103, 130, 0.52)">
 
     <div class="row">
@@ -256,55 +328,62 @@
         <h2>News:</h2>
       </div>
     </div>
-    <div class="container my-4 pb-2">
+    <div class="container-fluid my-4 pb-2">
       <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
               <div class="col">
                 <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                  <h5 class="card-header" style="text-align: center; color: rgba(23, 103, 130, 1);">Yacht  maintenance service
+                  <h5 class="card-header" style="text-align: center; color: rgba(23, 103, 130, 1);">Yacht maintenance
+                    service
                   </h5>
                   <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
                 </div>
-        
-        <div class="carousel-item">
-          <div class="col">
-            <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-              <h5 class="card-header" style="text-align: center; color: rgba(23, 103, 130, 1);">Yacht  maintenance service
-              </h5>
-              <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
-            </div>
-  
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
 
- 
+                <div class="carousel-item">
+                  <div class="col">
+                    <div class="card" style="background-color:rgba(255, 255, 255, 1);">
+                      <h5 class="card-header" style="text-align: center; color: rgba(23, 103, 130, 1);">Yacht
+                        maintenance service
+                      </h5>
+                      <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
+                    </div>
+
+                    <img src="..." class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
 
 
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+
+
+              <!-- Option 1: Bootstrap Bundle with Popper -->
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
 
 </body>
 
