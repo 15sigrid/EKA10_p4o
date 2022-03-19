@@ -12,17 +12,23 @@
 
   <!-- Font Noto Sans -->
   <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
- 
- <style>
-body {
-      background-attachment: fixed;
-      background-image: url(images/ajutine.png);
-      background-size: cover;
-      background-repeat: no-repeat;
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+    h1 {
+      position: relative;
+      color: #fff;
+      font-family: 'Noto Sans';
+      font-size: 200%;
     }
-    body {
-    font-family: 'Noto Sans';font-size: 22px;
-}
+
+    h2 {
+      position: relative;
+      color: #fff;
+      font-family: 'Noto Sans';
+      font-size: 160%;
+    }
 
     #background-video {
       height: 100vh;
@@ -34,7 +40,6 @@ body {
       top: 0;
       bottom: 0;
       z-index: -1;
-
     }
 
     body {
@@ -44,70 +49,60 @@ body {
       place-items: center;
       text-align: center;
     }
-    body {
-    margin: 0;
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    font-weight: var(--bs-body-font-weight);
-    line-height: var(--bs-body-line-height);
-    color: var(--bs-body-color);
-    text-align: var(--bs-body-text-align);
-    background-color: var(--bs-body-bg);
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-  }
-    h1 {
-      position: relative;
-      color: white;
-    }
-
     .headline {
       width: 100%;
-      font: 8vw system-ui, sans-serif;
-      font-weight: 900;
       height: 150px;
     }
 
-    @supports (backdrop-filter: blur(12px)) {
-      .visually-hidden {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-    }
-      h1 {
-        backdrop-filter: blur(12px);
-        background: rgba(white, 0.2);
-        clip-path: url(#lockup-headline-mask-path);
-      }
-    
-
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
     .navbar-nav {
-      font-size: 20px;
+      font-size: 22px;
     }
 
     .navbar-nav {
-      margin-left: 0px;
-      margin-right: 0px;
+      margin-right: 3rem;
     }
 
-    .navbar-light .navbar-nav .nav-link {
-      color: rgba(255, 255, 255, 1);
+    .navbar-brand {
+      padding-top: 0, 5rem;
+      padding-bottom: 0, 5rem;
+      margin-right: 0;
+      margin-left: 3rem;
+      font-size: 1.25rem;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
-    .navbar-light .navbar-nav .active>.nav-link,
-    .navbar-light .navbar-nav .nav-link.active,
-    .navbar-light .navbar-nav .nav-link.show,
-    .navbar-light .navbar-nav .show>.nav-link {
-      color: rgba(235, 232, 239, 1) 2px;
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(235, 232, 239, 1) 4px;
+      box-shadow: rgba(255, 199, 158, 1) 4px;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      padding-top: 0.5rem;
+      padding-right: 1rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      color: rgba(255, 255, 255, 1) 6px;
+      box-shadow: rgba(255, 199, 158, 1);
+      text-decoration: none;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    }
+
+    .navbar-dark .navbar-nav .active>.nav-link,
+    .navbar-dark .navbar-nav .nav-link.active,
+    .navbar-dark .navbar-nav .nav-link.show,
+    .navbar-dark .navbar-nav .show>.nav-link {
+      color: rgba(255, 255, 255, 1) 6px;
+      box-shadow: rgba(255, 199, 158, 1);
     }
 
     .shadow {
-      box-shadow: 0 .5rem 1rem rgba(235, 232, 239, 1) !important;
+      box-shadow: 0 .5rem 1rem rgba(255, 199, 158, 1) !important;
     }
-
 
     element.style {
       background-color: rgba(23, 103, 130, 0.52);
@@ -119,36 +114,33 @@ body {
     }
 
     .col {
-      padding-top: 4rem
+      padding-top: 1rem;
+      padding-bottom: 4rem;
     }
-    .service, 
-    .card {
-    position: relative;
-    display: 100%;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    text-align: center;
-    color: rgba(235, 232, 239, 1);
-    background-color: rgba(23, 103, 130, 0.52);
-    background-clip: border-box;
-    border: 1px solid rgba(35, 129, 161, 1);
-    border-radius: 1.25rem;
-    border-top-left-radius: 1.25rem;
-    border-top-right-radius: 1.25rem;
-    border-bottom-right-radius: 1.25rem;
-    border-bottom-left-radius: 1.25rem;
-}
 
+    .service,
+    .card {
+      position: relative;
+      display: 100%;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      text-align: center;
+      color: rgba(235, 232, 239, 1);
+      background-color: rgba(23, 103, 130, 0.52);
+      background-clip: border-box;
+      border: 1px solid rgba(35, 129, 161, 1);
+      border-radius: 1.25rem;
+    }
 
     element.style {
       text-align: center;
-      color: rgba(235, 232, 239, 1);
-    
     }
+
     .service,
-    .card-header
-    .card-header-top {
+    .card-header .card-header-top {
+      width: 100%;
+      height: 100%;
       padding: 1rem 1rem;
       margin-bottom: 0;
       border-bottom-width: 1px;
@@ -156,17 +148,6 @@ body {
       border-bottom-color: rgba(35, 129, 161, 1);
       border-top-right-radius: calc(1.25rem - 1px);
       border-top-left-radius: calc(1.25rem - 1px);
-
-    }
-
-    h5 {
-      display: block;
-      font-size: 1.125rem;
-      margin-block-start: 0px;
-      margin-block-end: 0px;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      font-weight: bold;
     }
 
     .card-img,
@@ -182,11 +163,12 @@ body {
     .card-desc {
       display: block;
       font-size: 1rem;
+      text-align: start;
       position: absolute;
       height: 0;
       top: 0;
       opacity: 0;
-      padding: 24px 8%;
+      padding: 2px 8%;
       background-color: rgba(35, 129, 161, 1);
       transition: 1s ease;
     }
@@ -200,35 +182,21 @@ body {
       border-bottom-left-radius: calc(1.25rem - 1px);
     }
 
-    element.style {
-      color: rgba(235, 232, 239, 1);
-    }
-
-    h1 {
-      font-size: 1rem;
-
-      margin: 40px 0 20px 0;
-      text-align: center;
-    }
-
     .wrapper {
       width: 100%;
       padding-top: 20px;
       text-align: center;
     }
-    .row {
-    --bs-gutter-x: 3rem;
-    --bs-gutter-y: 3rem;
-    display: flex;
-    flex-wrap: nowrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-    justify-content: space-evenly;
-}
-    h1 {
 
-      color: #fff;
+    .row {
+      --bs-gutter-x: 3rem;
+      --bs-gutter-y: 3rem;
+      display: flex;
+      flex-wrap: nowrap;
+      margin-top: calc(-1 * var(--bs-gutter-y));
+      margin-right: calc(-.5 * var(--bs-gutter-x));
+      margin-left: calc(-.5 * var(--bs-gutter-x));
+      justify-content: space-evenly;
     }
 
     .carousel {
@@ -246,13 +214,13 @@ body {
 
     .slick-prev,
     .slick-next {
-      background: #000;
+      background: rgba(23, 103, 130, 1)0;
       border-radius: 15px;
       border-color: transparent;
     }
 
     .carousel,
-    .card  {
+    .card.carousel {
       border: 1px solid rgba(23, 103, 130, 1);
       box-shadow: 1px 1px 15px rgba(35, 129, 161, 1);
     }
@@ -262,8 +230,8 @@ body {
       width: 100%;
       vertical-align: top;
       box-sizing: border-box;
-    border-bottom-right-radius: calc(1.25rem - 1px);
-    border-bottom-left-radius: calc(1.25rem - 1px);
+      border-bottom-right-radius: calc(1.25rem - 1px);
+      border-bottom-left-radius: calc(1.25rem - 1px);
     }
 
     .card-content {
@@ -273,8 +241,8 @@ body {
     }
 
     .card-text {
-      font-size: 1rem;
-      font-weight: 300;
+      font-size: 1.25rem;
+      font-weight: 600;
     }
 
     input[type=text],
@@ -282,7 +250,7 @@ body {
     textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid rgba(23, 103, 130, 1);;
+      border: 1px solid rgba(23, 103, 130, 1);
       border-radius: calc(1.25rem - 1px);
       box-sizing: border-box;
       margin-top: 6px;
@@ -304,6 +272,7 @@ body {
     input[type=submit]:hover {
       background-color: rgba(35, 129, 161, 1);
     }
+    
   </style>
   <title>Pure4ocean</title>
 
@@ -316,22 +285,25 @@ body {
   </video>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:rgba(23, 103, 130, 0.52)">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="Home"><img src="images/Pure4ocean_white.svg" class="img-fluid"></a>
-      <button class="navbar-toggler" type="button" style="color:rgba(235, 232, 239, 1)" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:rgba(23, 103, 130, 0.52)">
+    <a class="navbar-brand" href="home"><img src="images/Pure4ocean_white.svg" class="img-fluid"></a>
+    <div class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="home"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="service">Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news">News</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact">Contact</a>
+      </li>
 
-          <a class="nav-link active" aria-current="page" href="Home"></a>
-          <a class="nav-link" href="Service">Service</a>
-          <a class="nav-link" href="News">News</a>
-          <a class="nav-link" href="Contact">Contact</a>
-        </div>
-      </div>
+    </div>
+    </div>
     </div>
   </nav>
 
@@ -365,40 +337,45 @@ body {
   <div class="container-fluid mt-5" style="background-color:rgba(23, 103, 130, 0.52)">
     <div class="row">
       <div class="col text-center text-white py-4">
+        <h1>Service</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center text-white py-4">
         <h2>We offer all for yachts repairing and maintenance:</h2>
       </div>
     </div>
 
-<!-- Service row 1 -->
+    <!-- Service row 1 -->
     <div class="container my-2 pb-2">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card service" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts polishing service
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header">Yachts polishing service
             </h5>
             <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
-            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
         </div>
         <div class="col">
-          <div class="card service" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts cleaning service
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header">Yachts cleaning service
             </h5>
             <img src="images/yacht_cleaning.jpg" class="card-img-bottom" alt="">
-            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
         </div>
         <div class="col">
-          <div class="card service" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts bottom jobs</h5>
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header">Yachts bottom jobs</h5>
             <img src="images/yacht_bottom_job.jpg" class="card-img-bottom">
-            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -408,33 +385,33 @@ body {
       <!-- Service row 2 -->
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card service" style="background-color:rgba(23, 103, 130, 0.52);">
-            <div class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Yachts interior washing
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <div class="card-header">Yachts interior washing
               and scrubbing service</div>
             <img src="images/yacht_interior_cleaning.jpg" class="card-img-bottom">
-            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
         </div>
         <div class="col">
-          <div class="card service" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Teak varnishing service
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header">Teak varnishing service
             </h5>
             <img src="images/yacht_teak_varnishing.jpg" class="card-img-bottom">
-            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           </div>
         </div>
         <div class="col">
-          <div class="card service" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header" style="text-align: center; color: rgba(235, 232, 239, 1);">Fibre Glass and Gel Coat
+          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+            <h5 class="card-header">Fibre Glass and Gel Coat
               repairs</h5>
             <img src="images/yacht_fiber_gelcoat_rep.jpg" class="card-img-bottom">
-            <p class="card-desc" style="color: rgba(235, 232, 239, 1)">Lorem ipsum dolor sit amet, consectetur
+            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
               veniam, quis
               nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -466,94 +443,137 @@ body {
   <div class="wrapper">
     <div class="row mx-auto my-auto">
       <div class="carousel">
-      <div class="col-md-4">
-     
-          
+        <div class="col-md-4">
 
-              <!-- First slider -->
-              <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+          <!-- First slider -->
+          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
+              May, 2022
+            </h5>
+            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
+              <h4 class="cart-title">Yacht maintenance service</h4>
+              <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
+            </div>
+          </div>
+          <!-- Second slider -->
+          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+            <h4 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
+              May, 2022
+            </h4>
+            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
+              <h5 class="cart-title">Time to prepare for boating season</h5>
+              <img src="images/prepare_for_boating_season.gif" class="d-block w-100" alt="prepare_for_boating_season">
+            </div>
+          </div>
+          <!-- Third slider -->
+          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
+              May, 2022
+            </h5>
+            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
+              <h4 class="cart-title">It's time to prepare your boat for winterizing</h4>
+              <img src="Images/boat_prepare_ror_winterizing.gif" class="d-block w-100" alt="prepare_for_boating_season">
+            </div>
+                </div>
+          <!-- fourth slider -->
+          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
+              May, 2022
+            </h5>
+            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
+              <h4 class="cart-title">Earth Overshoot Day</h4>
+              <img src="Images/earth-overshoot-day.jpg" class="d-block w-100" alt="prepare_for_boating_season">
+            </div>
+                </div>
+          <!-- fifth slider -->
+          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
+              May, 2022
+            </h5>
+            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
+              <h4 class="cart-title">First bodywork for the brand new Beneteau Monte Carlo 52</h4>
+              <img src="Images/first bodywork brand new beneteau.jfif" class="d-block w-100" alt="prepare_for_boating_season">
+            </div>
+                </div>
+          <!-- sixth slider -->
+          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
+            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
+              May, 2022
+            </h5>
+            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
+              <h4 class="cart-title">Time to polish your stainless steel</h4>
+              <img src="Images/stainless steel polishing.jfif" class="d-block w-100" alt="prepare_for_boating_season">
+            </div>
+                </div>
+ 
+      </div>
+    </div>
+  </div>
+  </div>
+  <div>
+    <!-- Inner -->
+    <div class="carousel-inner py-4">
+
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card" style="background-color:rgba(255, 255, 255, 1);">
                 <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Yacht
                   maintenance service
                 </h5>
-                <div class="card-body">
-                  <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
-                </div>
+                <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
               </div>
-              <!-- Second slider -->
-              <div class="card" style="background-color: rgba(255, 255, 255, 1);">
-                <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Yacht
-                  maintenance service
+            </div>
+            <div class="col-lg-4 d-none d-lg-block">
+              <div class="card" style="background-color:rgba(255, 255, 255, 1);">
+                <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to
+                  prepare for boating season
                 </h5>
-                <div class="card-body">
-                  <img src="images/prepare_for_boating_season.gif" class="d-block w-100"
-                    alt="prepare_for_boating_season">
-                </div>
-              </div>
-              <!-- Third slider -->
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://lorempixel.com/200/200/abstract/3">
-                </div>
-                <div class="card-body">
-                  <div class="card-content">
-                    <div class="card-title">This is the Third slider</div>
-                    <div class="card-text">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book.</p>
-                    </div>
-                  </div>
-                </div>
+                <img src="images/prepare_for_boating_season.gif" class="d-block w-100" alt="prepare_for_boating_season">
               </div>
             </div>
-            <div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://lorempixel.com/200/200/abstract/4">
-                </div>
-                <div class="card-body">
-                  <div class="card-content">
-                    <div class="card-title">This is the Fourth slider</div>
-                    <div class="card-text">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book.</p>
-                    </div>
-                  </div>
-                </div>
+            <div class="col-lg-4 d-none d-lg-block">
+              <div class="card" style="background-color:rgba(255, 255, 255, 1);">
+                <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
+                  prepare your boat for winterizing
+                </h5>
+                <img src="images/boat_prepare_ror_winterizing.gif" class="d-block w-100"
+                  alt="boat_prepare_ror_winterizing">
               </div>
             </div>
-            <div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://lorempixel.com/200/200/abstract/5">
-                </div>
-                <div class="card-body">
-                  <div class="card-content">
-                    <div class="card-title">This is the Fifth slider</div>
-                    <div class="card-text">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book.</p>
+
+            <!-- Single item -->
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="card" style="background-color:rgba(255, 255, 255, 1);">
+                      <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
+                        prepare your boat for winterizing
+                      </h5>
+                      <img src="images/boat_prepare_ror_winterizing.gi" class="d-block w-100" alt="...">
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div class="card">
-                <div class="card-header">
-                  <img src="https://lorempixel.com/200/200/abstract/6">
-                </div>
-                <div class="card-body">
-                  <div class="card-content">
-                    <div class="card-title">This is the Sixth slider</div>
-                    <div class="card-text">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book.</p>
+                  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="card" style="background-color:rgba(255, 255, 255, 1);">
+                      <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
+                        prepare your boat for winterizing
+                      </h5>
+                      <img src="images/boat_prepare_ror_winterizing.gi" class="d-block w-100" alt="...">
                     </div>
                   </div>
+                  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div class="card" style="background-color:rgba(255, 255, 255, 1);">
+                      <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
+                        prepare your boat for winterizing
+                      </h5>
+                      <img src="images/boat_prepare_ror_winterizing.gi" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block"></div>
                 </div>
               </div>
             </div>
@@ -561,105 +581,33 @@ body {
         </div>
       </div>
     </div>
-    <div>
-      <!-- Inner -->
-      <div class="carousel-inner py-4">
-
-        <!-- Single item -->
-        <div class="carousel-item active">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                  <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Yacht
-                    maintenance service
-                  </h5>
-                  <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                  <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to
-                    prepare for boating season
-                  </h5>
-                  <img src="images/prepare_for_boating_season.gif" class="d-block w-100"
-                    alt="prepare_for_boating_season">
-                </div>
-              </div>
-              <div class="col-lg-4 d-none d-lg-block">
-                <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                  <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
-                    prepare your boat for winterizing
-                  </h5>
-                  <img src="images/boat_prepare_ror_winterizing.gif" class="d-block w-100"
-                    alt="boat_prepare_ror_winterizing">
-                </div>
-              </div>
-
-              <!-- Single item -->
-              <div class="carousel-item">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                      <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                        <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
-                          prepare your boat for winterizing
-                        </h5>
-                        <img src="images/boat_prepare_ror_winterizing.gi" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                      <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                        <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
-                          prepare your boat for winterizing
-                        </h5>
-                        <img src="images/boat_prepare_ror_winterizing.gi" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                      <div class="card" style="background-color:rgba(255, 255, 255, 1);">
-                        <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to
-                          prepare your boat for winterizing
-                        </h5>
-                        <img src="images/boat_prepare_ror_winterizing.gi" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-
-                    <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  </div>
+  <!-- Contact Form -->
+  <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
+    <div class="form-row">
+      <div class="col text-center text-white py-4">
+        <h2>Let’s Keep In Touch:</h2>
       </div>
     </div>
-    <!-- Contact Form -->
-    <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
-      <div class="form-row">
-        <div class="col text-center text-white py-4">
-          <h2>Let’s Keep In Touch:</h2>
-        </div>
-      </div>
-      <div class="container my-5">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <form action="/action_page.php">
-              <input type="text" id="fname" name="firstname" placeholder="Your Name..">        
-            <input type="text" id="lname" name="lastname" placeholder="Your Email..">
+    <div class="container my-5">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <form action="/action_page.php">
+          <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+          <input type="text" id="lname" name="lastname" placeholder="Your Email..">
           <textarea id="subject" name="subject" placeholder="Your Message ....." style="height:200px"></textarea>
-        <input type="submit" value="Send">
+          <input type="submit" value="Send">
         </form>
       </div>
     </div>
   </div>
-</div>
-</div> 
+  </div>
+  </div>
   <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
 
-      <!-- Option 1: Bootstrap Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
 
 </body>
 
