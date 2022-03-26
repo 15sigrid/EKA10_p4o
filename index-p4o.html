@@ -140,7 +140,7 @@
     .service,
     .card-header .card-header-top {
       width: 100%;
-      height: 100%;
+      max-height: 100%;
       padding: 1rem 1rem;
       margin-bottom: 0;
       border-bottom-width: 1px;
@@ -154,7 +154,7 @@
     .card-img,
     .card-img-bottom {
       width: 100%;
-      height: 22rem;
+      height: max-content;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: calc(1.25rem - 1px);
@@ -188,6 +188,7 @@
     .card-body {
       background: #fff;
       width: flex;
+
       vertical-align: top;
       box-sizing: border-box;
       border-bottom-right-radius: calc(1.25rem - 1px);
@@ -267,6 +268,8 @@
       padding: 12px 20px;
       border: 1px solid rgba(235, 232, 239, 1);
       border-radius: calc(1.25rem - 1px);
+      text-align: center;
+      font-size: 1rem;
       cursor: pointer;
       float: left;
     }
@@ -310,6 +313,26 @@
     .carousel-inner .carousel-item-start {
       transform: translateX(0);
     }
+    .card {
+  box-shadow: 0 4px 4px 0 rgba(229, 229, 229, 1);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  
+}
+
+.title {
+  color: rgba(23, 103, 130, 1);
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: rgba(23, 103, 130, 1);
+}
+
   </style>
   <title>Pure4ocean</title>
 
@@ -473,7 +496,7 @@
   </div>
 
   <!-- News header -->
-  <div class="container-fluid py-4" style="background-color:rgba(23, 103, 130, 1)">
+  <div class="container-fluid py-4" style="background-color:rgba(35, 129, 161, 1)">
     <div class="row">
       <div class="col text-center text-white py-4">
         <h2>News:</h2>
@@ -591,12 +614,22 @@
           <textarea id="subject" name="subject" placeholder="Your Message ....." style="height:200px"></textarea>
           <input type="submit" value="Send">
         </form>
+        <div class="card">
+          <img src="Images/r_f_den.jpg" alt="Freimann" style="width:100%; border-radius: 50%;">
+          <h1>Raino Freimann</h1>
+          <p class="title">Owner</p>
+          <p>MereSina OÜ</p>
+          <div style="margin: 24px 0;"> 
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+          </div>
+        </div>
       </div>
     </div>
   </div>
   </div>
   </div>
-  <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
+  <div class="container-fluid" style="background: transparent"></div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
