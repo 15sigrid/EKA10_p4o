@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Font Noto Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    h1 {
+      position: relative;
+      color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 200%;
+    }
+
+    h2 {
+      position: relative;
+      color: #fff;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 160%;
+    }
+
+    #background-video {
+      height: 100vh;
+      width: 100vw;
+      object-fit: cover;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .headline {
+      width: 100%;
+      height: 150px;
+    }
+
+    .navbar-nav {
+      font-size: 22px;
+    }
+
+    .navbar-nav {
+      margin-right: 3rem;
+    }
+
+    .navbar-brand {
+      padding-top: 0, 5rem;
+      padding-bottom: 0, 5rem;
+      margin-right: 0;
+      margin-left: 3rem;
+      font-size: 1.25rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(235, 232, 239, 1) 4px;
+      box-shadow: rgba(255, 199, 158, 1) 4px;
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      padding-top: 0.5rem;
+      padding-right: 1rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      color: rgba(255, 255, 255, 1) 6px;
+      box-shadow: rgba(255, 199, 158, 1);
+      text-decoration: none;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+    }
+
+    .navbar-dark .navbar-nav .active>.nav-link,
+    .navbar-dark .navbar-nav .nav-link.active,
+    .navbar-dark .navbar-nav .nav-link.show,
+    .navbar-dark .navbar-nav .show>.nav-link {
+      color: rgba(255, 255, 255, 1) 6px;
+      box-shadow: rgba(255, 199, 158, 1);
+    }
+
+    .shadow {
+      box-shadow: 0 .5rem 1rem rgba(255, 199, 158, 1) !important;
+    }
+
+    element.style {
+      background-color: rgba(23, 103, 130, 0.52);
+    }
+
+    .container,
+    .container-fluid {
+      backface-visibility: hidden;
+    }
+
+    .col {
+      padding-top: 1rem;
+      padding-bottom: 4rem;
+    }
+
+    .service,
+    .card {
+      position: relative;
+      display: 100%;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      text-align: center;
+      color: rgba(23, 103, 130, 1);
+      background-clip: border-box;
+      border: 1, 25px solid rgba(35, 129, 161, 1);
+      border-radius: 1.25rem;
+    }
+
+    element.style {
+      text-align: center;
+    }
+
+    .service,
+    .card-header .card-header-top {
+      width: 100%;
+      height: 100%;
+      padding: 1rem 1rem;
+      margin-bottom: 0;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-top-color: rgba(255, 255, 255, 1);
+      border-bottom-color: rgba(35, 129, 161, 1);
+      border-top-right-radius: calc(1.25rem - 1px);
+      border-top-left-radius: calc(1.25rem - 1px);
+    }
+
+    .card-img,
+    .card-img-bottom {
+      width: 100%;
+      height: 22rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: calc(1.25rem - 1px);
+      border-bottom-left-radius: calc(1.25rem - 1px);
+    }
+
+    .card-desc {
+      display: block;
+      font-size: 1rem;
+      text-align: start;
+      color: rgba(255, 255, 255, 1);
+      position: absolute;
+      height: 0;
+      top: 0;
+      opacity: 0;
+      padding: 2px 8%;
+      background-color: rgba(35, 129, 161, 1);
+      transition: 1s ease;
+    }
+
+    .card:hover .card-desc {
+      opacity: 1;
+      height: 100%;
+      border-top-right-radius: calc(1.25rem - 1px);
+      border-top-left-radius: calc(1.25rem - 1px);
+      border-bottom-right-radius: calc(1.25rem - 1px);
+      border-bottom-left-radius: calc(1.25rem - 1px);
+    }
+
+
+    .card-body {
+      background: #fff;
+      width: flex;
+      vertical-align: top;
+      box-sizing: border-box;
+      border-bottom-right-radius: calc(1.25rem - 1px);
+      border-bottom-left-radius: calc(1.25rem - 1px);
+    }
+
+    .card-content {
+      text-align: left;
+      color: rgba(23, 103, 130, 1);
+      padding: 15px;
+    }
+
+    .card-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid rgba(23, 103, 130, 1);
+      border-radius: calc(1.25rem - 1px);
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+      color: -internal-light-dark(rgba(23, 103, 130, 1), white);
+    }
+    input {
+    writing-mode: horizontal-tb !important;
+    font-size: 0.875rem;
+    font-family: 'Noto Sans', sans-serif;
+    text-rendering: auto;
+    color: -internal-light-dark (rgba(23, 103, 130, 1), white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: -internal-light-dark (rgb(255, 255, 255), rgba(23, 103, 130, 1));
+  }
+  textarea {
+    writing-mode: horizontal-tb !important;
+    font-size: 0.875rem;
+    font-family: 'Noto Sans', sans-serif;
+    text-rendering: auto;
+    color: -internal-light-dark (rgba(23, 103, 130, 1), white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgba(23, 103, 130, 1));
+    column-count: initial !important;
+  }
+    input[type=submit] {
+      width: 20%;
+      background-color: rgba(23, 103, 130, 1);
+      color: white;
+      padding: 12px 20px;
+      border: 1px solid rgba(235, 232, 239, 1);
+      border-radius: calc(1.25rem - 1px);
+      cursor: pointer;
+      float: left;
+    }
+
+    input[type=submit]:hover {
+      background-color: rgba(35, 129, 161, 1);
+    }
+
+
+    @media (max-width: 767px) {
+      .carousel-inner .carousel-item>div {
+        display: none;
+      }
+
+      .carousel-inner .carousel-item>div:first-child {
+        display: block;
+      }
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      display: flex;
+    }
+
+    /* medium and up screens */
+    @media (min-width: 768px) {
+
+      .carousel-inner .carousel-item-end.active,
+      .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+      }
+
+      .carousel-inner .carousel-item-start.active,
+      .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+      }
+    }
+
+    .carousel-inner .carousel-item-end,
+    .carousel-inner .carousel-item-start {
+      transform: translateX(0);
+    }
+  </style>
+  <title>Pure4ocean</title>
+
+</head>
+
+<body>
+  <!-- Background video -->
+  <video id="background-video" autoplay loop muted poster="Images/Pexels Videos 2776522.jpg">
+    <source src="Images/Pexels Videos 2776522.mp4" type="video/mp4">
+  </video>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:rgba(23, 103, 130, 0.52)">
+    <a class="navbar-brand" href="home"><img src="images/Pure4ocean_white.svg" class="img-fluid"></a>
+    <div class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="home"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="service">Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news">News</a>
+      </li>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact">Contact</a>
+      </li>
+    </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1 class="headline">
+      <span class="visually-hidden">Maintain your boat & save the ocean's health!</span>
+      <svg aria-hidden="true" id="lockup-headline-mask" class="headline lockup-headline-mask visually-hidden">
+        <clipPath id="lockup-headline-mask-path">
+          <text dominant-baseline="hanging" text-anchor="middle" x="50%" y="0em" dy="0.125em">Awesome Headline</text>
+        </clipPath>
+      </svg>
+    </h1>
+  </header>
+
+  <!-- Home -->
+  <div class="container-fluid px-4">
+    <div class="row justify-content-start">
+      <div class="col-8 ">
+        <img src="images/yach-maintenance.svg" class="img-fluid">
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-6">
+        <img src="images/skilled-experience.svg" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <!-- Service header -->
+  <div class="container-fluid mt-5" style="background-color:rgba(23, 103, 130, 1)">
+    <div class="row">
+      <div class="col text-center text-white py-4">
+        <h1>Service</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center text-white py-4">
+        <h2>We offer all for yachts repairing and maintenance:</h2>
+      </div>
+    </div>
+
+    <!-- Service row 1 -->
+    <div class="container my-2 pb-2">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <h5 class="card-header">Yachts polishing</h5>
+            <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Yachts polishing</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-header">Yachts cleaning</h5>
+            <img src="images/yacht_cleaning.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Yachts cleaning</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-header">Yachts bottom jobs</h5>
+            <img src="images/yacht_bottom_job.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Yachts bottom jobs</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Service row 2 -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card">
+            <h5 class="card-header">Interior washing & scrubbing</h5>
+            <img src="images/yacht_interior_cleaning.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Interior washing & scrubbing</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-header">Teak varnishing</h5>
+            <img src="images/yacht_teak_varnishing.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Teak varnishing</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-header">Fibre Glass and Gel Coat repairs</h5>
+            <img src="images/yacht_fiber_gelcoat_rep.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Fibre Glass and Gel Coat repairs</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Quote -->
+  <div class="container-fluid px-4 py-4">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <img src="images/save_the_oceans_health.svg" class="img-fluid">
+      </div>
+    </div>
+  </div>
+
+  <!-- News header -->
+  <div class="container-fluid py-4" style="background-color:rgba(23, 103, 130, 1)">
+    <div class="row">
+      <div class="col text-center text-white py-4">
+        <h2>News:</h2>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="row mx-auto my-auto justify-content-center">
+      <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+
+          <!-- First item -->
+          <div class="carousel-item active">
+            <div class="col-md-4">
+              <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+                <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Yacht maintenance
+                  service</h5>
+                <div class="card-body">
+                  <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Second item -->
+          <div class="carousel-item">
+            <div class="col-md-4">
+              <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+                <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to prepare for
+                  boating season</h5>
+                <div class="card-body">
+                  <img src="images/prepare_for_boating_season.gif" class="d-block w-100"
+                    alt="yacht_maintenance_service">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Third item -->
+          <div class="carousel-item">
+            <div class="col-md-4">
+              <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+                <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to prepare
+                  your boat for winterizing</h5>
+                <div class="card-body">
+                  <img src="images/boat_prepare_for_winterizing.gif" class="d-block w-100"
+                    alt="yacht_maintenance_service">
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Fourth item -->
+        <div class="carousel-item">
+          <div class="col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Earth Overshoot Day
+              </h5>
+              <div class="card-body">
+                <img src="images/earth-overshoot-day.jpg" class="d-block w-100" alt="yacht_maintenance_service">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fifth item -->
+        <div class="carousel-item">
+          <div class="col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">First bodywork for the
+                brand new Beneteau Monte Carlo 52</h5>
+              <div class="card-body">
+                <img src="images/first bodywork brand new beneteau.jfif" class="d-block w-100"
+                  alt="yacht_maintenance_service">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Sixth item -->
+        <div class="carousel-item">
+          <div class="col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to polish your
+                stainless steel</h5>
+              <div class="card-body">
+                <img src="images/stainless steel polishing.jfif" class="d-block w-100" alt="yacht_maintenance_service">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div> 
+</div>
+
+  <!-- Space -->
+  <div class="container-fluid" style="background: transparent;"></div>
+  
+  <!-- Contact Form -->
+  <div class="container-fluid py-4" style="background-color:rgba(23, 103, 130, 1)">
+    <div class="form-row">
+      <div class="col text-center text-white py-4">
+        <h2>Contact:</h2>
+      </div>
+    </div>
+    <div class="container fluid py-4">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <form action="/action_page.php">
+          <input type="text" id="fname" name="firstname" placeholder="Your Name..">
+          <input type="text" id="lname" name="lastname" placeholder="Your Email..">
+          <textarea id="subject" name="subject" placeholder="Your Message ....." style="height:200px"></textarea>
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+
+    <script>
+
+      let items = document.querySelectorAll('.carousel .carousel-item')
+
+      items.forEach((el) => {
+        const minPerSlide = 4
+        let next = el.nextElementSibling
+        for (var i = 1; i < minPerSlide; i++) {
+          if (!next) {
+            // wrap carousel by using first child
+            next = items[0]
+          }
+          let cloneChild = next.cloneNode(true)
+          el.appendChild(cloneChild.children[0])
+          next = next.nextElementSibling
+        }
+      })
+
+
+    </script>
+
+</body>
+
+</html>
