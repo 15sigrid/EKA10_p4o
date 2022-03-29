@@ -49,6 +49,7 @@
       place-items: center;
       text-align: center;
     }
+
     .headline {
       width: 100%;
       height: 150px;
@@ -182,58 +183,50 @@
       border-bottom-left-radius: calc(1.25rem - 1px);
     }
 
-    .wrapper {
-      width: 100%;
-      padding-top: 20px;
-      text-align: center;
+    @media (min-width: 768px) {
+      .carousel-inner {
+        display: flex;
+      }
+
+      .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+      }
     }
 
-
-    .carousel {
-      width: 100%;
-      margin: 0px auto;
+    .carousel-inner {
+      padding: 1em;
     }
 
-    .slick-slide {
-      margin: 10px;
+    .card {
+      margin: 0 .5em;
+      box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+      border: none;
     }
 
-    .slick-slide img {
-      width: 100%;
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: #e1e1e1;
+      width: 6vh;
+      height: 6vh;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
-    .slick-prev,
-    .slick-next {
-      background: rgba(23, 103, 130, 1)0;
-      border-radius: 15px;
-      border-color: transparent;
+    .card .img-wrapper {
+      max-width: 100%;
+      height: 13em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .carousel,
-    .card.carousel {
-      border: 1px solid rgba(23, 103, 130, 1);
-      box-shadow: 1px 1px 15px rgba(35, 129, 161, 1);
+    img {
+      max-height: 100%;
     }
 
-    .card-body {
-      background: #fff;
-      width: 100%;
-      vertical-align: top;
-      box-sizing: border-box;
-      border-bottom-right-radius: calc(1.25rem - 1px);
-      border-bottom-left-radius: calc(1.25rem - 1px);
-    }
-
-    .card-content {
-      text-align: left;
-      color: rgba(23, 103, 130, 1);
-      padding: 15px;
-    }
-
-    .card-text {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
 
     input[type=text],
     select,
@@ -262,44 +255,6 @@
     input[type=submit]:hover {
       background-color: rgba(35, 129, 161, 1);
     }
-    
-
-
-
-    @media (max-width: 767px) {
-  .carousel-inner .carousel-item > div {
-      display: none;
-  }
-  .carousel-inner .carousel-item > div:first-child {
-      display: block;
-  }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-/* medium and up screens */
-@media (min-width: 768px) {
-  
-  .carousel-inner .carousel-item-end.active,
-  .carousel-inner .carousel-item-next {
-    transform: translateX(25%);
-  }
-  
-  .carousel-inner .carousel-item-start.active, 
-  .carousel-inner .carousel-item-prev {
-    transform: translateX(-25%);
-  }
-}
-
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start { 
-transform: translateX(0);
-}
-    
   </style>
   <title>Pure4ocean</title>
 
@@ -464,128 +419,108 @@ transform: translateX(0);
         <h2>News:</h2>
       </div>
     </div>
-  </div>
+    <!-- Carousel -->
+    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+      <!-- Carousel indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
 
-  <div class="row mx-auto my-auto justify-content-center">
-    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <div class="col-md-4">
-                  <div class="card" style="background-color: rgba(255, 255, 255, 1);">
-                    <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-                      May, 2022
-                    </h5>
-                    <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-                      <h4 class="cart-title">Yacht maintenance service</h4>
-                      <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
-                    </div>
-                  </div>
-                </div>
+        <!-- First item -->
+        <div class="carousel-item active">
+          <div class="card">
+            <div class="img-wrapper">
+              <h5 class="card-title">Yacht maintenance service</h5>
             </div>
-            <div class="carousel-item">
-              <div class="col-md-4">
-                <div class="card " style="background-color: rgba(255, 255, 255, 1);">
-                  <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-                    May, 2022
-                  </h5>
-                  <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-                    <h4 class="cart-title">Yacht maintenance service</h4>
-                    <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
-                  </div>
-                </div>
-              </div>
+            <div class="card-body">
+              <img src="Images/p4o_contact_us.gif" class="d-block w-100" alt="p4o_contact_us">
+              <a href="#" class="btn btn-primary">Read more...</a>
+            </div>
           </div>
-
-
-
         </div>
-        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-    </div>
-</div>
-
-
-  <!-- Card carousel -->
-  <div class="wrapper">
-    <div class="row mx-auto my-auto">
-      <div class="carousel">
-        <div class="col-md-4">
-
-          <!-- First slider -->
-          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
-            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-              May, 2022
-            </h5>
-            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-              <h4 class="cart-title">Yacht maintenance service</h4>
-              <img src="images/p4o_contact_us.gif" class="d-block w-100" alt="yacht_maintenance_service">
+        
+        <!-- Second item -->
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper">
+              <h5 class="card-title">Time to prepare for boating season</h5>
+            </div>
+            <div class="card-body">
+              <img src="Images/prepare_for_boating_season.gif" class="d-block w-100" alt="prepare_for_boating_season">
+              <a href="#" class="btn btn-primary">Read more...</a>
             </div>
           </div>
-          <!-- Second slider -->
-          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
-            <h4 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-              May, 2022
-            </h4>
-            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-              <h5 class="cart-title">Time to prepare for boating season</h5>
-              <img src="images/prepare_for_boating_season.gif" class="d-block w-100" alt="prepare_for_boating_season">
+        </div>
+        <!-- Third item -->
+        <div class="carousel-item">
+          <div class="card">
+            <div class="img-wrapper">
+              <h5 class="card-title">It's time to prepare your boat for winterizing</h5>
+            </div>
+            <div class="card-body">
+              <img src="Images/boat_prepare_for_winterizing.gif" class="d-block w-100" alt="boat_prepare_for_winterizing">
+              <a href="#" class="btn btn-primary">Read more...</a>
             </div>
           </div>
-          <!-- Third slider -->
-          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
-            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-              May, 2022
-            </h5>
-            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-              <h4 class="cart-title">It's time to prepare your boat for winterizing</h4>
-              <img src="Images/boat_prepare_ror_winterizing.gif" class="d-block w-100" alt="prepare_for_boating_season">
-            </div>
-                </div>
-          <!-- fourth slider -->
-          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
-            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-              May, 2022
-            </h5>
-            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-              <h4 class="cart-title">Earth Overshoot Day</h4>
-              <img src="Images/earth-overshoot-day.jpg" class="d-block w-100" alt="prepare_for_boating_season">
-            </div>
-                </div>
-          <!-- fifth slider -->
-          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
-            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-              May, 2022
-            </h5>
-            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-              <h4 class="cart-title">First bodywork for the brand new Beneteau Monte Carlo 52</h4>
-              <img src="Images/first bodywork brand new beneteau.jfif" class="d-block w-100" alt="prepare_for_boating_season">
-            </div>
-                </div>
-          <!-- sixth slider -->
-          <div class="card carousel" style="background-color: rgba(255, 255, 255, 1);">
-            <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">26,
-              May, 2022
-            </h5>
-            <div class="card-body" style="text-align: center; color: rgba(35, 129, 161, 1);">
-              <h4 class="cart-title">Time to polish your stainless steel</h4>
-              <img src="Images/stainless steel polishing.jfif" class="d-block w-100" alt="prepare_for_boating_season">
-            </div>
-                </div>
- 
-
-
-                  <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block"></div>
-                </div>
-              </div>
-            </div>
+        </div>
+        <!-- Fourth item -->
+        <div class="carousel-item">
+          <div class="card">
+          <div class="img-wrapper">
+            <h5 class="card-title">First bodywork for the brand new Beneteau Monte Carlo 52</h5>
+            <div class="card-body">
+            <img src="Images/first bodywork brand new beneteau.jfif" class="d-block w-100" alt="first bodywork brand new beneteau">
+            <a href="#" class="btn btn-primary">Read more...</a>
           </div>
         </div>
       </div>
+      <!-- Fifth item -->
+      <div class="carousel-item">
+        <div class="card">
+        <div class="img-wrapper">
+          <h5 class="card-title">Stainless steel polishing</h5>
+          <div class="card-body">
+          <img src="Images/stainless steel polishing.jfif" class="d-block w-100" alt="stainless steel polishing">
+          <a href="#" class="btn btn-primary">Read more...</a>
+        </div>
+      </div>
     </div>
+          <!-- Sixth item -->
+          <div class="carousel-item">
+            <div class="card">
+            <div class="img-wrapper">
+              <h5 class="card-title">Work in Progress</h5>
+              <div class="card-body">
+              <img src="Images/yacht_teak_varnishing.jpg" class="d-block w-100" alt="yacht_teak_varnishing">
+              <a href="#" class="btn btn-primary">Read more...</a>
+            </div>
+          </div>
+        </div>
+        
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block"></div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
   </div>
   <!-- Contact Form -->
   <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
@@ -615,26 +550,39 @@ transform: translateX(0);
       crossorigin="anonymous"></script>
 
 
-<script>
-
-let items = document.querySelectorAll('.carousel .carousel-item')
-
-items.forEach((el) => {
-    const minPerSlide = 4
-    let next = el.nextElementSibling
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-        	next = items[0]
-      	}
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
+    <script>
+var multipleCardCarousel = document.querySelector(
+  "#carouselExampleControls"
+);
+if (window.matchMedia("(min-width: 768px)").matches) {
+  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+    interval: false,
+  });
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+  var cardWidth = $(".carousel-item").width();
+  var scrollPosition = 0;
+  $("#carouselExampleControls .carousel-control-next").on("click", function () {
+    if (scrollPosition < carouselWidth - cardWidth * 4) {
+      scrollPosition += cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
     }
-})
-
-
-</script>
+  });
+  $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+} else {
+  $(multipleCardCarousel).addClass("slide");
+}
+    </script>
 
 </body>
 
