@@ -2,7 +2,7 @@
 $card-cap-color: rgba(235, 232, 239, 1);
 $card-color: rgba(35, 129, 161, 0.6);
 $card-bg: rgba(35, 129, 161, 0.6);
-$card-height: auto;
+$card-service-height: auto;
 $card-cap-bg: rgba(35, 129, 161, 0.6);
 $card-border-color: rgba(35, 129, 161, 1);
 $card-spacer-x: 2.5rem;
@@ -11,3 +11,8 @@ $card-columns-count: 6;
 $card-columns-gap: 1,25rem;
 
 $font-family: 'Noto Sans', sans-serif;
+
+$navbar-light-color: rgba(235, 232, 239, 1) 4px
+$navbar-nav-font-size 1.125rem;
+$navbar-nav-font-weight: 200;
+
