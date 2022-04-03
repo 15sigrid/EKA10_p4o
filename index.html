@@ -15,12 +15,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
   <style>
+    body {
+  position: relative;
+}
     h1 {
       position: relative;
       color: #fff;
       font-family: 'Noto Sans', sans-serif;
-      font-size: 200%;
+      font-size: 180%;
     }
 
     h2 {
@@ -54,14 +60,7 @@
       width: 100%;
       height: 150px;
     }
-
-    .navbar-nav {
-      font-size: 22px;
-    }
-
-    .navbar-nav {
-      margin-right: 3rem;
-    }
+ /** Navbar  **/
 
     .navbar-brand {
       padding-top: 0, 5rem;
@@ -73,42 +72,55 @@
       white-space: nowrap;
     }
 
-    .navbar-dark .navbar-nav .nav-link {
-      color: rgba(235, 232, 239, 1) 4px;
-      box-shadow: rgba(255, 199, 158, 1) 4px;
-      padding-right: 1rem;
-      padding-left: 1rem;
+    .navbar-light .navbar-nav {
+      margin-right: 3rem;
+      margin-left: 0;
+      padding-right: 4rem;
+      padding-left: 4rem;
+
     }
 
-    .nav-link {
-      display: block;
-      padding: 0.5rem 1rem;
+      .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
       padding-top: 0.5rem;
       padding-right: 1rem;
       padding-bottom: 0.5rem;
       padding-left: 1rem;
-      color: rgba(255, 255, 255, 1) 6px;
-      box-shadow: rgba(255, 199, 158, 1);
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
+  .nav-item {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 1rem;
+      margin-left: 0;
+      padding-right: 1rem;
+      padding-left: 1rem;
+
+  }
+    a {
+      font-family:  'Noto Sans', sans-serif;
       text-decoration: none;
-      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-    }
-
-    .navbar-dark .navbar-nav .active>.nav-link,
-    .navbar-dark .navbar-nav .nav-link.active,
-    .navbar-dark .navbar-nav .nav-link.show,
-    .navbar-dark .navbar-nav .show>.nav-link {
+      font-size: 1.25rem;
+      font-weight: 500;
       color: rgba(255, 255, 255, 1) 6px;
-      box-shadow: rgba(255, 199, 158, 1);
+    
     }
-
-    .shadow {
-      box-shadow: 0 .5rem 1rem rgba(255, 199, 158, 1) !important;
-    }
-
-    element.style {
-      background-color: rgba(23, 103, 130, 0.52);
-    }
-
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #2381A1;
+    border: 0;
+    border-radius: calc(1.25rem);
+}
+.nav-link:focus, .nav-link:hover {
+    color: #FFFF00;
+  }
+    a:hover {
+    color: #FFFF00;
+  }
     .container,
     .container-fluid {
       backface-visibility: hidden;
@@ -118,19 +130,17 @@
       padding-top: 1rem;
       padding-bottom: 4rem;
     }
-
-    .service,
-    .card {
+ 
+    .service .card {
       position: relative;
       display: 100%;
       flex-direction: column;
       min-width: 0;
       word-wrap: break-word;
       text-align: center;
-      color: rgba(235, 232, 239, 1);
-      background-color: rgba(23, 103, 130, 0.52);
+      color: rgba(23, 103, 130, 1);
       background-clip: border-box;
-      border: 1px solid rgba(35, 129, 161, 1);
+      border: 1, 25px solid rgba(35, 129, 161, 1);
       border-radius: 1.25rem;
     }
 
@@ -138,33 +148,34 @@
       text-align: center;
     }
 
-    .service,
-    .card-header .card-header-top {
+    .service .card-header .card-header-top {
       width: 100%;
-      height: 100%;
+      max-height: 100%;
       padding: 1rem 1rem;
       margin-bottom: 0;
       border-bottom-width: 1px;
       border-bottom-style: solid;
+      border-top-color: rgba(255, 255, 255, 1);
       border-bottom-color: rgba(35, 129, 161, 1);
       border-top-right-radius: calc(1.25rem - 1px);
       border-top-left-radius: calc(1.25rem - 1px);
     }
 
-    .card-img,
-    .card-img-bottom {
+    .service .card-img,
+    .service .card-img-bottom {
       width: 100%;
-      height: 22rem;
+      height: 300px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: calc(1.25rem - 1px);
       border-bottom-left-radius: calc(1.25rem - 1px);
     }
 
-    .card-desc {
+    .service .card-desc {
       display: block;
       font-size: 1rem;
       text-align: start;
+      color: rgba(255, 255, 255, 1);
       position: absolute;
       height: 0;
       top: 0;
@@ -174,7 +185,7 @@
       transition: 1s ease;
     }
 
-    .card:hover .card-desc {
+    .service .card:hover .card-desc {
       opacity: 1;
       height: 100%;
       border-top-right-radius: calc(1.25rem - 1px);
@@ -184,74 +195,96 @@
     }
 
 
-   /** Carousel start  **/
+    .service .card-body {
+      background: #fff;
+      width: flex;
+      height: fit-content;
 
-    .carousel-inner {
-  padding: 1em;
-}
-.card {
-  margin: 0 0.5em;
-  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-  border: none;
-}
-.carousel-control-prev,
-.carousel-control-next {
-  background-color: #e1e1e1;
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-@media (min-width: 768px) {
-  .carousel-item {
-    margin-right: 0;
-    flex: 0 0 33.333333%;
-    display: block;
-  }
-  .carousel-inner {
-    display: flex;
-  }
-}
-.card .img-wrapper {
-    max-width: 100%;
-    height: 13em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.card img {
-    max-height: 100%;
-}
-@media (max-width: 767px) {
-  .card .img-wrapper {
-    height: 17em;
-  }
-}
+      vertical-align: top;
+      box-sizing: border-box;
+      border-bottom-right-radius: calc(1.25rem - 1px);
+      border-bottom-left-radius: calc(1.25rem - 1px);
+    }
 
- /** Carousel end  **/
 
+    .service .card-content {
+      text-align: left;
+      color: rgba(23, 103, 130, 1);
+      padding: 15px;
+    }
+
+    .service .card-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
 
     input[type=text],
     select,
     textarea {
       width: 100%;
-      padding: 12px;
-      border: 1px solid rgba(23, 103, 130, 1);
+      padding: 8px;
+      border: 6px solid rgba(23, 103, 130, 1);
       border-radius: calc(1.25rem - 1px);
       box-sizing: border-box;
       margin-top: 6px;
       margin-bottom: 16px;
       resize: vertical;
+      color: -internal-light-dark(rgba(23, 103, 130, 1), white);
+    }
+
+    input {
+      writing-mode: horizontal-tb !important;
+      font-size: 0.75rem;
+      font-family: 'Noto Sans', sans-serif;
+      text-rendering: auto;
+      color: -internal-light-dark (rgba(23, 103, 130, 1), white);
+      letter-spacing: normal;
+      word-spacing: normal;
+      line-height: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      appearance: auto;
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      background-color: -internal-light-dark (rgb(255, 255, 255), rgba(23, 103, 130, 1));
+    }
+
+    textarea {
+      writing-mode: horizontal-tb !important;
+      font-size: 0.75rem;
+      font-family: 'Noto Sans', sans-serif;
+      text-rendering: auto;
+      color: -internal-light-dark (rgba(23, 103, 130, 1), white);
+      letter-spacing: normal;
+      word-spacing: normal;
+      line-height: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      appearance: auto;
+      -webkit-rtl-ordering: logical;
+      resize: auto;
+      cursor: text;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      background-color: -internal-light-dark(rgb(255, 255, 255), rgba(23, 103, 130, 1));
+      column-count: initial !important;
     }
 
     input[type=submit] {
       width: 20%;
       background-color: rgba(23, 103, 130, 1);
       color: white;
-      padding: 12px 20px;
-      border: 1px solid rgba(235, 232, 239, 1);
+      padding: 14px 22px;
+      border: 2px solid rgba(235, 232, 239, 1);
       border-radius: calc(1.25rem - 1px);
+      text-align: center;
+      font-size: 1rem;
       cursor: pointer;
       float: left;
     }
@@ -259,6 +292,101 @@
     input[type=submit]:hover {
       background-color: rgba(35, 129, 161, 1);
     }
+
+
+    /** Carousel start  **/
+    .carousel .card {
+      border-radius: calc(1.25rem - 1px);
+    }
+
+    @media (max-width: 767px) {
+      .carousel-inner .carousel-item>div {
+        display: none;
+        position: relative;
+    width: flex;
+    overflow: hidden;
+      }
+
+      .carousel-inner .carousel-item>div:first-child {
+        display: block;
+      }
+    }
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      display: flex;
+    }
+    .carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 1rem;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+[role=button] {
+    cursor: pointer;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inside;
+    width: 2rem;
+    height: 2rem;
+    font-weight: 200;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    background-color: rgba(35, 129, 161, 0.6);
+    border-radius: 50px;
+    }
+
+/** Carousel end  **/
+
+    .card-contact {
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'Noto Sans', sans-serif;
+
+    }
+
+    .title {
+      color: rgba(255, 255, 255, 1);
+      font-size: 1rem;
+    }
+.card-contact
+    a {
+      text-decoration: none;
+      font-size: 2.25rem;
+      color: rgba(255, 255, 255, 1);
+      padding: 1rem;
+    }
+    a:hover {
+    color: #FFFF00;
+  }
+
+  .card-contact-tel 
+  a {
+    text-decoration: none;
+    font-size: 1.375rem;
+    padding: 1rem;
+  }
+  .card-contact-email
+  a {
+    text-decoration: none;
+    font-size: 1.375rem;
+    padding: 1rem;
+  }
+
   </style>
   <title>Pure4ocean</title>
 
@@ -267,31 +395,24 @@
 <body>
   <!-- Background video -->
   <video id="background-video" autoplay loop muted poster="Images/Pexels Videos 2776522.jpg">
-    <source src="Images/Pexels Videos 2776522.mp4" type="video/mp4">
+    <source src="Images/video_bage_p4o.mp4" type="video/mp4">
   </video>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color:rgba(23, 103, 130, 0.52)">
+  <nav  class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:rgba(23, 103, 130, 0.90)">
     <a class="navbar-brand" href="home"><img src="images/Pure4ocean_white.svg" class="img-fluid"></a>
-    <div class="navbar-nav ms-auto">
+    <ul class="nav nav-pills ms-auto">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="home"></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="service">Service</a>
+        <a class="nav-link" href="#scrollspyService">Service</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="news">News</a>
-      </li>
+        <a class="nav-link" href="#scrollspyNews">News</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contact">Contact</a>
+        <a class="nav-link" href="#scrollspyContact">Contact</a>
       </li>
-
-    </div>
-    </div>
-    </div>
   </nav>
+
 
   <!-- Header -->
   <header>
@@ -320,11 +441,13 @@
   </div>
 
   <!-- Service header -->
-  <div class="container-fluid mt-5" style="background-color:rgba(23, 103, 130, 0.52)">
-    <div class="row">
+  <div class="container-fluid mt-5 service" style="background-color:rgba(23, 103, 130, 0.90)">
+    <div class="row" style="background-color:rgba(23, 103, 130, 0.60)">
       <div class="col text-center text-white py-4">
-        <h1>Service</h1>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0"></div>
+        <h1 id="scrollspyService">Service</h1>
       </div>
+    
     </div>
     <div class="row">
       <div class="col text-center text-white py-4">
@@ -336,294 +459,258 @@
     <div class="container my-2 pb-2">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header">Yachts polishing service
-            </h5>
+          <div class="card">
+            <h5 class="card-header">Yachts polishing</h5>
             <img src="images/yacht_polishing.jpg" class="card-img-bottom" alt="">
-            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="card-desc pt-5">
+              <h5>Yachts polishing</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
           </div>
         </div>
         <div class="col">
-          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header">Yachts cleaning service
-            </h5>
+          <div class="card">
+            <h5 class="card-header">Yachts cleaning</h5>
             <img src="images/yacht_cleaning.jpg" class="card-img-bottom" alt="">
-            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="card-desc pt-5">
+              <h5>Yachts cleaning</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
           </div>
         </div>
         <div class="col">
-          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
+          <div class="card">
             <h5 class="card-header">Yachts bottom jobs</h5>
-            <img src="images/yacht_bottom_job.jpg" class="card-img-bottom">
-            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <img src="images/yacht_bottom_job.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Yachts bottom jobs</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
           </div>
         </div>
       </div>
       <!-- Service row 2 -->
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-            <div class="card-header">Yachts interior washing
-              and scrubbing service</div>
-            <img src="images/yacht_interior_cleaning.jpg" class="card-img-bottom">
-            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="card">
+            <h5 class="card-header">Interior washing & scrubbing</h5>
+            <img src="images/yacht_interior_cleaning.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Interior washing & scrubbing</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
           </div>
         </div>
         <div class="col">
-          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header">Teak varnishing service
-            </h5>
-            <img src="images/yacht_teak_varnishing.jpg" class="card-img-bottom">
-            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="card">
+            <h5 class="card-header">Teak varnishing</h5>
+            <img src="images/yacht_teak_varnishing.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Teak varnishing</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
           </div>
         </div>
         <div class="col">
-          <div class="card" style="background-color:rgba(23, 103, 130, 0.52);">
-            <h5 class="card-header">Fibre Glass and Gel Coat
-              repairs</h5>
-            <img src="images/yacht_fiber_gelcoat_rep.jpg" class="card-img-bottom">
-            <p class="card-desc">Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <div class="card">
+            <h5 class="card-header">Fibre Glass and Gel Coat repairs</h5>
+            <img src="images/yacht_fiber_gelcoat_rep.jpg" class="card-img-bottom" alt="">
+            <div class="card-desc pt-5">
+              <h5>Fibre Glass and Gel Coat repairs</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Quote -->
   <div class="container-fluid px-4 py-4">
     <div class="row justify-content-center">
-      <div class="col-4">
+      <div class="col-6 pt-4">
         <img src="images/save_the_oceans_health.svg" class="img-fluid">
       </div>
     </div>
   </div>
 
   <!-- News header -->
-  <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
-    <div class="row">
+  <div class="container-fluid mt-5 mb-5 pb-5" style="background-color:rgba(23, 103, 130, 0.90)">
+    <div class="row mb-2" style="background-color:rgba(23, 103, 130, 0.40)">
       <div class="col text-center text-white py-4">
-        <h2>News:</h2>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0"></div>
+        <h1 id="scrollspyNews">News:</h1>
       </div>
     </div>
-<!-- Carousel start -->
-    <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Item 1 -->
-          <div class="carousel-item active">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 1</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+
+    <!-- Carousel -->
+
+    <div id="newsCarousel" class="carousel slide" data-bs-rider="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="row mb-5">
+
+          <!-- First item -->
+
+          <div class="carousel-item col-6 col-md-4 active">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1)">
+              <h5 class="card-header" style="text-align: center; color: rgba(23, 103, 130, 1);">Yacht maintenance
+                service</h5>
+              <div class="card-body">
+                <img src="images/p4o_contact_us.gif" class="img-fluid" alt="yacht_maintenance_service">
               </div>
+            </div>
           </div>
-          <!-- Item 2 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 2</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+
+          <!-- Second item -->
+
+          <div class="carousel-item col-6 col-md-4 ">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1)">
+              <h5 class="card-header" style="text-align: center; color: rgba(23, 103, 130, 1);">Time to prepare for
+                boating season</h5>
+              <div class="card-body">
+                <img src="images/_prepare_for_boating_season.gif" class="img-fluid" alt="yacht_maintenance_service">
               </div>
+            </div>
           </div>
-          <!-- Item 3 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 3</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+
+          <!-- Third item -->
+
+          <div class="carousel-item col-6 col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1)">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Work in Progress</h5>
+              <div class="card-body">
+                <img src="images/teak_deck_facelift.gif" class="img-fluid" alt="teak_deck_facelift">
               </div>
+            </div>
           </div>
-          <!-- Item 4 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 4</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+
+          <!-- Fourth item -->
+
+          <div class="carousel-item col-6 col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1)">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Prepare
+                your boat for winterizing
+              </h5>
+              <div class="card-body">
+                <img src="images/_boat_prepare_ror_winterizing.gif" class="img-fluid" alt="boat_prepare_ror_winterizing">
               </div>
+            </div>
           </div>
-          <!-- Item 5 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 5</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+
+          <!-- Fifth item -->
+
+          <div class="carousel-item col-6 col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1)">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">First bodywork for the
+                brand new boat</h5>
+              <div class="card-body">
+                <img src="images/first bodywork for brand new beneteau.gif" class="img-fluid"
+                  alt="first bodywork for brand new beneteau">
               </div>
+            </div>
           </div>
-          <!-- Item 6 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 6</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
+
+          <!-- Sixth item -->
+
+          <div class=" carousel-item col-6 col-md-4">
+            <div class="card" style="background-color: rgba(255, 255, 255, 1)">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to polish your
+              stainless steel</h5>
+              <div class="card-body">
+                <img src="images/stainless steel polishing.gif" class="img-fluid" alt="first bodywork for brand new beneteau">
               </div>
+            </div>
           </div>
-          <!-- Item 7 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 7</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-              </div>
-          </div>
-          <!-- Item 8 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 8</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-              </div>
-          </div>
-          <!-- Item 3 -->
-          <div class="carousel-item">
-              <div class="card">
-                  <div class="img-wrapper"><img src="..." class="d-block w-100" alt="..."> </div>
-                  <div class="card-body">
-                      <h5 class="card-title">Card title 9</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                          card's content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-              </div>
-          </div>
+
+        </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-      </button>
+
+      <a class="carousel-control-prev bg-transparent w-aut" href="#newsCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next bg-transparent w-aut" href="#newsCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon"  aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Quote 2 -->
+  <div class="container-fluid mb-6 pb-6">
+    <div class="row pt-8 mx-8 justify-content-center">
+      <div class="col-6 my-4 py-4">
+        <img src="images/_save_the_oceans_health.svg" class="img-fluid">
+      </div>
+    </div>
   </div>
   
-
-      <div class="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block"></div>
-    </div>
-  </div>
-  </div>
-  </div>
-  </div>
-
-  <!-- Contact Form -->
-  <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
-    <div class="form-row">
+  <!-- Contact -->
+  <div class="container-fluid my-4" style="background-color:rgba(23, 103, 130, 0.90)">
+    <div class="row" style="background-color:rgba(23, 103, 130, 0.60)">
       <div class="col text-center text-white py-4">
-        <h2>Let’s Keep In Touch:</h2>
+        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0"></div>
+        <h1 id="scrollspyContact">Contact us:</h1>
       </div>
     </div>
-    <div class="container my-5">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <form action="/action_page.php">
-          <input type="text" id="fname" name="firstname" placeholder="Your Name..">
-          <input type="text" id="lname" name="lastname" placeholder="Your Email..">
-          <textarea id="subject" name="subject" placeholder="Your Message ....." style="height:200px"></textarea>
-          <input type="submit" value="Send">
-        </form>
+    <div class="row my-4">
+      <div class="col-card py-4">
+        <div class="card-contact">
+          <img src="Images/r_f_den.jpg" alt="Freimann" style="width:100%; border-radius: 50%;">
+          <h1 class="mt-3">Raino Freimann</h1>
+         <div class="card-contact-tel"> <a href="tel:+4670033416">+46 700 331 416</a></div>
+         <div class="card-contact-email"> <a href="mailto:info@pure4ocean.com">info@pure4ocean.com</a></div>
+
+          <div style="margin: 24px 0;">
+            <a href="https://instagram.com/pure4ocean?utm_medium=copy_link"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/Pure4ocean-102294191485991"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
       </div>
     </div>
+ 
   </div>
-  </div>
-  </div>
-  <div class="container-fluid" style="background-color:rgba(23, 103, 130, 0.52)">
 
-
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"></script>
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-   
-   <!-- Carousel start -->
-
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
     <script>
-var multipleCardCarousel = document.querySelector(
-  "#carouselExampleControls"
-);
-if (window.matchMedia("(min-width: 768px)").matches) {
-  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-    interval: false,
-  });
-  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-  var cardWidth = $(".carousel-item").width();
-  var scrollPosition = 0;
-  $("#carouselExampleControls .carousel-control-next").on("click", function () {
-    if (scrollPosition < carouselWidth - cardWidth * 4) {
-      scrollPosition += cardWidth;
-      $("#carouselExampleControls .carousel-inner").animate(
-        { scrollLeft: scrollPosition },
-        600
-      );
-    }
-  });
-  $("#carouselExampleControls .carousel-control-prev").on("click", function () {
-    if (scrollPosition > 0) {
-      scrollPosition -= cardWidth;
-      $("#carouselExampleControls .carousel-inner").animate(
-        { scrollLeft: scrollPosition },
-        600
-      );
-    }
-  });
-} else {
-  $(multipleCardCarousel).addClass("slide");
-}
-    </script>
+    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: '#navbar-example'
+    })
+  </script>
+  <script>
 
-<!-- Carousel end -->
+    let items = document.querySelectorAll('.carousel .carousel-item')
 
+    items.forEach((el) => {
+      const minPerSlide = 3
+      let next = el.nextElementSibling
+      for (var i = 1; i < minPerSlide; i++) {
+        if (!next) {
+          // wrap carousel by using first child
+          next = items[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+      }
+    })
+
+
+  </script>
 
 </body>
 

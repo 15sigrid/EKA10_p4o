@@ -218,7 +218,7 @@
     textarea {
       width: 100%;
       padding: 8px;
-      border: 1px solid rgba(23, 103, 130, 1);
+      border: 6px solid rgba(23, 103, 130, 1);
       border-radius: calc(1.25rem - 1px);
       box-sizing: border-box;
       margin-top: 6px;
@@ -229,7 +229,7 @@
 
     input {
       writing-mode: horizontal-tb !important;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       font-family: 'Noto Sans', sans-serif;
       text-rendering: auto;
       color: -internal-light-dark (rgba(23, 103, 130, 1), white);
@@ -249,7 +249,7 @@
 
     textarea {
       writing-mode: horizontal-tb !important;
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       font-family: 'Noto Sans', sans-serif;
       text-rendering: auto;
       color: -internal-light-dark (rgba(23, 103, 130, 1), white);
@@ -275,8 +275,8 @@
       width: 20%;
       background-color: rgba(23, 103, 130, 1);
       color: white;
-      padding: 12px 20px;
-      border: 1px solid rgba(235, 232, 239, 1);
+      padding: 14px 22px;
+      border: 2px solid rgba(235, 232, 239, 1);
       border-radius: calc(1.25rem - 1px);
       text-align: center;
       font-size: 1rem;
@@ -306,16 +306,16 @@
     }
 
     /* medium and up screens */
-    @media (min-width: 768px) {
+    @media (min-width: 600px) {
 
       .carousel-inner .carousel-item-end.active,
       .carousel-inner .carousel-item-next {
-        transform: translateX(25%);
+        transform: translateX(0);
       }
 
       .carousel-inner .carousel-item-start.active,
       .carousel-inner .carousel-item-prev {
-        transform: translateX(-25%);
+        transform: translateX(0);
       }
     }
 
@@ -324,16 +324,18 @@
       transform: translateX(0);
     }
 
+    .carousel-item {
+      min-height: 400px;
+      min-width: 300px;
+    }
+
     .card-contact {
       max-width: 300px;
       margin: auto;
       text-align: center;
+      font-size: 1rem;
       font-family: 'Noto Sans', sans-serif;
 
-    }
-
-    .carousel-item {
-      min-height: 550px;
     }
 
     .title {
@@ -343,8 +345,9 @@
 
     a {
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 2rem;
       color: rgba(255, 255, 255, 1);
+      padding: 1rem;
     }
   </style>
   <title>Pure4ocean</title>
@@ -509,7 +512,7 @@
   </div>
 
   <!-- News header -->
-  <div class="container-fluid py-4" style="background-color:rgba(35, 129, 161, 1)">
+  <div class="container-fluid py-4" style="background-color:rgba(23, 103, 130, 1)">
     <div class="row">
       <div class="col text-center text-white py-4">
         <h2>News:</h2>
@@ -517,15 +520,15 @@
     </div>
 
     <!-- Carousel -->
-    
-      <div id="newsCarousel" class="carousel slide" data-bs-rider="carousel">
-        <div class="carousel-inner" role="listbox">
-          <div class="row">
+
+    <div id="newsCarousel" class="carousel slide" data-bs-rider="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="row">
           <!-- First item -->
 
           <div class="carousel-item col-md-4 active">
-            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
-              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Yacht maintenance
+            <div class="card" style="background-color: transparent;">
+              <h5 class="card-header" style="text-align: center; color: rgba(255, 255, 255, 1);">Yacht maintenance
                 service</h5>
               <div class="card-body">
                 <img src="images/p4o_contact_us.gif" class="img-fluid" alt="yacht_maintenance_service">
@@ -535,9 +538,9 @@
 
           <!-- Second item -->
 
-          <div class="carousel-item col-md-4 " >
-            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
-              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to prepare for
+          <div class="carousel-item col-md-4 ">
+            <div class="card" style="background-color: transparent;">
+              <h5 class="card-header" style="text-align: center; color: rgba(255, 255, 255, 1);">Time to prepare for
                 boating season</h5>
               <div class="card-body">
                 <img src="images/prepare_for_boating_season.gif" class="img-fluid" alt="yacht_maintenance_service">
@@ -547,9 +550,9 @@
 
           <!-- Third item -->
 
-          <div class=" carousel-item col-md-4">
-            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
-              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">It's time to prepare
+          <div class="carousel-item col-md-4">
+            <div class="card" style="background-color: transparent;">
+              <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Prepare
                 your boat for winterizing</h5>
               <div class="card-body">
                 <img src="images/boat_prepare_for_winterizing.gif" class="img-fluid" alt="yacht_maintenance_service">
@@ -559,8 +562,8 @@
 
           <!-- Fourth item -->
 
-          <div class=" carousel-item col-md-4">
-            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+          <div class="carousel-item col-md-4">
+            <div class="card" style="background-color: transparent;">
               <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Earth Overshoot Day
               </h5>
               <div class="card-body">
@@ -571,10 +574,10 @@
 
           <!-- Fifth item -->
 
-          <div class=" carousel-item col-md-4">
-            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+          <div class="carousel-item col-md-4">
+            <div class="card" style="background-color: transparent;">
               <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">First bodywork for the
-                brand new Beneteau Monte Carlo 52</h5>
+                brand new boat</h5>
               <div class="card-body">
                 <img src="images/first bodywork brand new beneteau.jfif" class="img-fluid"
                   alt="yacht_maintenance_service">
@@ -584,8 +587,8 @@
 
           <!-- Sixth item -->
 
-          <div class=" carousel-item col-md-4">
-            <div class="card" style="background-color: rgba(255, 255, 255, 1);">
+          <div class="carousel-item col-md-4">
+            <div class="card" style="background-color: transparent;">
               <h5 class="card-header" style="text-align: center; color: rgba(35, 129, 161, 1);">Time to polish your
                 stainless steel</h5>
               <div class="card-body">
@@ -595,16 +598,14 @@
           </div>
 
         </div>
-        </div>
+      </div>
 
-        <a class="carousel-control-prev bg-transparent w-aut" href="#newsCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a class="carousel-control-next bg-transparent w-aut" href="#newsCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-
-      
+      <a class="carousel-control-prev bg-transparent w-aut" href="#newsCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next bg-transparent w-aut" href="#newsCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
   </div>
@@ -613,33 +614,58 @@
   <!-- Space -->
   <div class="container-fluid" style="background: transparent;"></div>
 
-  <!-- Contact Form -->
+  <!-- Contact -->
   <div class="container-fluid py-4" style="background-color:rgba(23, 103, 130, 1)">
+    <div class="row my-4">
+    <div class="col text-center text-white py-4">
+      <h2>Contact us:</h2>
+    </div>
+  </div>
+    <div class="row my-4">
+      <div class="col-card py-4">
+        <div class="card-contact">
+          <img src="Images/r_f_den.jpg" alt="Freimann" style="width:100%; border-radius: 50%;">
+          <h1 class="mt-3">Raino Freimann</h1>
+          <p class="title">+46 700 331 416</p>
+          <p class="title">MereSina OÜ</p>
+          <div style="margin: 24px 0;">
+            <a href="https://instagram.com/pure4ocean?utm_medium=copy_link"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/Pure4ocean-102294191485991"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        </div>
+
+  <!--<div class="container-fluid py-4" style="background-color:rgba(23, 103, 130, 1)">
     <div class="form-row">
       <div class="col text-center text-white py-4">
         <h2>Contact:</h2>
       </div>
     </div>
     <div class="container fluid py-4">
-      <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-2 g-4">
+        <div class="col-input order-lg-first order-last">
         <form action="/action_page.php">
           <input type="text" id="fname" name="firstname" placeholder="Your Name..">
           <input type="text" id="lname" name="lastname" placeholder="Your Email..">
           <textarea id="subject" name="subject" placeholder="Your Message ....." style="height:200px"></textarea>
           <input type="submit" value="Send">
         </form>
+      </div>
+      <div class="col-card">
         <div class="card-contact">
           <img src="Images/r_f_den.jpg" alt="Freimann" style="width:100%; border-radius: 50%;">
-          <h1 class="mt-5">Raino Freimann</h1>
+          <h1 class="mt-3">Raino Freimann</h1>
+          <p class="title">+46 700 331 416</p>
           <p class="title">MereSina OÜ</p>
           <div style="margin: 24px 0;">
-            <a href="https://www.facebook.com/Pure4ocean-102294191485991"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/pure4ocean?utm_medium=copy_link"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/Pure4ocean-102294191485991"><i class="bi bi-facebook"></i></a>
           </div>
         </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </div>-->
+  </div> 
   <div class="container-fluid" style="background: transparent"></div>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
